@@ -49,10 +49,10 @@ function matchCards(img1, img2){
         matchCard ++;
         writeMusic();
         if(matchCard == 8){
-           
            setTimeout(() => {
                 // return shuffleCard();
                 resultPage(); 
+                victoryMusic();
             }, 300);
         }
         cardOne.removeEventListener("click", flipcard);
@@ -166,5 +166,10 @@ function WrongMusic(){
 }
 function writeMusic(){
     const audio = new Audio("./game music/complete.mp3");
+    audio.play();
+}
+
+function victoryMusic(){
+    const audio = new Audio("./game music/john-cena-ringtonebgmjohn-cena-entry-song1688598706.mp3");
     audio.play();
 }
