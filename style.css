@@ -89,14 +89,41 @@ body{
 .card.flip .back-view{
     transform: rotateY(0);  
 }
+.button{
+    display: flex;
+    align-items:center ;
+    justify-content:center ;
+    flex-direction: column;
+}
 button{
-    display: list-item;
     height: 60px;
     width: 100px;
     border-radius: 10px;
-    margin : 20px;
+    margin : 10px 20px;
     font-weight: 800;
     font-size: large;
     color: #6563ff;
     border: 0px;
+}
+
+@media (max-width: 600px) {
+   body{
+    flex-direction: column;
+   }
+   .button{
+    flex-direction: row;
+   }
+   button{
+    margin: 20px 10px;
+   }
+}
+
+@media(max-width:400px){
+    .wrapper{
+    height: 375px;
+    width: 375px;
+    padding: 25px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    }
 }
