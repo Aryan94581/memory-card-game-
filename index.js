@@ -4,6 +4,9 @@ const startButton = document.querySelector(".btn");
 
 const helpButton = document.querySelector(".btn2");
 
+const wrapper = document.getElementsByClassName("wrapper");
+
+const ButtonDiv = document.getElementsByClassName("button");
 
 let cardOne, cardTwo;
 
@@ -36,9 +39,8 @@ function matchCards(img1, img2){
     if (img1 === img2){
         matchCard ++;
         if(matchCard == 8){
-            setTimeout(() => {
-                return shuffleCard(); 
-            }, 1000);
+           wrapper.classList.add("hide");
+           ButtonDiv.classList.add("hide");
         }
         cardOne.removeEventListener("click", flipcard);
         cardTwo.removeEventListener("click", flipcard);

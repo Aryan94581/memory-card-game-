@@ -11,7 +11,7 @@
       <link href="style.css" rel="stylesheet" >
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper hide">
         <ul class="cards">
             <li class="card">
                 <div class="view front-view">
@@ -143,9 +143,24 @@
             </li>
         </ul>
     </div>
-    <div class="button">
-        <button class="btn2">Start</button>
-        <button class="btn">Next</button>
+    <div class="btnDiv hide">
+        <button class="btn2 hide">Start</button>
+        <button class="btn hide">Next</button>
+    </div>
+
+    <div class="ResultBox">
+        <div class="upperSection">
+            <h1 class="headline">You Win! 🥳</h1>
+            <div class="resultBoxRow">
+                <h1> Time Taken</h1>
+                <h1 class="time"> 0: 35s</h1>
+            </div>
+            <div class="resultBoxRow">
+                <h1>Mistakes</h1>
+                <h1 class="mistakes" >0</h1>
+            </div>
+        </div>
+        <div class=""> <button>Start New Game</button></div>
     </div>
     <script src="index.js"></script>
 </body>

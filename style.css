@@ -6,6 +6,9 @@
     box-sizing: border-box;
     font-family: 'poppins', sans-serif ;
 }
+.hide{
+    display: none;
+}
 body{
     display: flex;
     align-items: center;
@@ -25,8 +28,6 @@ body{
     align-items: center;
     justify-content: center;
 }
-
-
 .cards{
     height: 100%;
     width: 100%;
@@ -89,7 +90,7 @@ body{
 .card.flip .back-view{
     transform: rotateY(0);  
 }
-.button{
+.btnDiv{
     display: flex;
     align-items:center ;
     justify-content:center ;
@@ -105,6 +106,70 @@ button{
     color: #6563ff;
     border: 0px;
 }
+
+/* Result box */
+.ResultBox{
+    height: 400px;
+    width: 400px;
+    padding: 25px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.upperSection{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    /* background-color: pink; */
+}
+.upperSection .headline{
+    font-size: 2.5rem;
+    color: #4746ab;
+}
+.resultBoxRow{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items:end;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 2px 15px;
+    color: #4746ab;
+
+    background:#fff;
+    border-radius: 7px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+}
+.time{
+    color: #6563ff;
+
+}
+.mistakes{
+    color: #6563ff;
+     margin-right: 50px ;
+}
+.ResultBox button{
+    height: 70px;
+    width: 90%;
+    border-radius: 10px;
+    margin : 10px 20px;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #6563ff;
+    border: 0px;
+    cursor: pointer;
+    /* box-shadow: 0 3px 10px rgba(0,0,0,0.1); */
+}
+
 
 @media (max-width: 600px) {
    body{
