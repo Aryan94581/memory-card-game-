@@ -11,6 +11,10 @@ let matchCard = 0 ;
 
 let disableDeck = false;
 
+window.onload = function () {
+    shuffleCard();
+    helpButton.innerHTML=" Start";
+}
 function flipcard(e){
     let clickedCard = e.target;
     if(clickedCard!== cardOne && !disableDeck){
@@ -58,7 +62,7 @@ function matchCards(img1, img2){
 function shuffleCard(){
     matchCard = 0;
     cardOne = cardTwo = "";
-    let arr = [1, 1, 2, 3, 2, 3, 4, 4, 5, 6, 7, 8, 5, 6, 7, 8];
+    let arr = [4, 6, 2, 3, 8, 1, 7, 5, 4, 5, 2, 6, 8, 7, 3, 1];
     arr.sort(() => Math.random() > 0.5 ? 1 : -1);
     
     cards.forEach((card, i) => {
@@ -81,11 +85,12 @@ startButton.addEventListener("click", function(){
 })
 
 helpButton.addEventListener("click", function(){
+    helpButton.innerHTML=" Help";
     cards.forEach(card => {
         card.classList.add("flip");
         setTimeout(() => {
             card.classList.remove("flip");
-        }, 700);
+        }, 2000);
         card.addEventListener("click", flipcard);
     });
 })
