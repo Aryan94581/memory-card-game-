@@ -111,6 +111,7 @@ newGame.addEventListener("click", function(){
     buttonDiv.classList.remove("hide");
     resultBox.classList.add("hide");
     startButton.innerHTML="Start";
+    flipcard();
 })
 startButton.addEventListener("click", function(){
     startClock();
