@@ -27,7 +27,7 @@ let seconds = 0;
 window.onload = function () {
     shuffleCard();
 }
-function flipcard(e){
+function flipCard(e){
     let clickedCard = e.target;
     if(clickedCard!== cardOne && !disableDeck){
         clickedCard.classList.add("flip");
@@ -55,8 +55,8 @@ function matchCards(img1, img2){
                 victoryMusic();
             }, 300);
         }
-        cardOne.removeEventListener("click", flipcard);
-        cardTwo.removeEventListener("click", flipcard);
+        cardOne.removeEventListener("click", flipCard);
+        cardTwo.removeEventListener("click", flipCard);
         cardOne = cardTwo = "";
         return disableDeck = false;
     }
@@ -89,7 +89,7 @@ function shuffleCard(){
         card.classList.remove("flip");
         let imgTag = card.querySelector("img");
         imgTag.src = 'game-image/img-'+ arr[i] +'.png';
-        card.addEventListener("click", flipcard);
+        card.addEventListener("click", flipCard);
     });
 }
 function resultPage(){
@@ -114,7 +114,7 @@ newGame.addEventListener("click", function(){
     buttonDiv.classList.remove("hide");
     resultBox.classList.add("hide");
     startButton.innerHTML="Start";
-    flipcard();
+    shuffleCard();
 })
 startButton.addEventListener("click", function(){
     startClock();
@@ -126,7 +126,7 @@ startButton.addEventListener("click", function(){
         setTimeout(() => {
             card.classList.remove("flip");
         }, 2000);
-        card.addEventListener("click", flipcard);
+        card.addEventListener("click", flipCard);
     });
     
 })
@@ -137,7 +137,7 @@ helpButton.addEventListener("click", function(){
         setTimeout(() => {
             card.classList.remove("flip");
         }, 2000);
-        card.addEventListener("click", flipcard);
+        card.addEventListener("click", flipCard);
     });
 })
 
