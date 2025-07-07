@@ -23,6 +23,7 @@ let disableDeck = false;
 let minutes = 0;    
 let seconds = 0;
 
+
 window.onload = function () {
     shuffleCard();
 }
@@ -46,6 +47,7 @@ function flipcard(e){
 function matchCards(img1, img2){
     if (img1 === img2){
         matchCard ++;
+        writeMusic();
         if(matchCard == 8){
            
            setTimeout(() => {
@@ -60,6 +62,7 @@ function matchCards(img1, img2){
     }
     else{
         mistakes++;
+        WrongMusic();
         setTimeout(() => {
             cardOne.classList.add("shake");
             cardTwo.classList.add("shake"); 
@@ -116,6 +119,7 @@ newGame.addEventListener("click", function(){
 startButton.addEventListener("click", function(){
     startClock();
     shuffleCard();
+    playBackgroundMusic();
     startButton.innerHTML="Next";
     cards.forEach(card => {
         card.classList.add("flip");
@@ -138,3 +142,29 @@ helpButton.addEventListener("click", function(){
 })
 
 
+ // declare globally so it doesn't recreate each time
+
+function playBackgroundMusic() {
+    if (window._bgAudioRef) {
+    window._bgAudioRef.pause();
+    window._bgAudioRef.currentTime = 0;
+    }
+  const audio = new Audio("./game music/Ncs Mp3 Ringtone Download - MobCup.Com.Co.mp3"); // Replace with your file
+  audio.loop = true;
+  audio.volume = 0.1;
+  audio.play();
+
+  // Optional: store the audio in window object if you want to control it later
+  window._bgAudioRef = audio;
+}
+
+
+function WrongMusic(){
+    const audio = new Audio("./game music/sounds_wrong.mp3");
+    audio.play();
+    audio.volume = 0.21;
+}
+function writeMusic(){
+    const audio = new Audio("./game music/complete.mp3");
+    audio.play();
+}
