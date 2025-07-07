@@ -170,6 +170,10 @@ function writeMusic(){
 }
 
 function victoryMusic(){
+    if (window._bgAudioRef) {
+    window._bgAudioRef.pause();
+    window._bgAudioRef.currentTime = 0;
+    }
     const audio = new Audio("./game music/john-cena-ringtonebgmjohn-cena-entry-song1688598706.mp3");
     audio.play();
 }
