@@ -6,9 +6,6 @@
     box-sizing: border-box;
     font-family: 'poppins', sans-serif ;
 }
-.hide{
-    display: none;
-}
 body{
     display: flex;
     align-items: center;
@@ -108,7 +105,7 @@ button{
 }
 
 /* Result box */
-.ResultBox{
+.resultBox{
     height: 400px;
     width: 400px;
     padding: 25px;
@@ -156,7 +153,7 @@ button{
     color: #6563ff;
      margin-right: 50px ;
 }
-.ResultBox button{
+.resultBox button{
     height: 70px;
     width: 90%;
     border-radius: 10px;
@@ -169,7 +166,9 @@ button{
     cursor: pointer;
     /* box-shadow: 0 3px 10px rgba(0,0,0,0.1); */
 }
-
+.hide{
+    display: none;
+}
 
 @media (max-width: 600px) {
    body{
