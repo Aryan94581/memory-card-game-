@@ -8,7 +8,9 @@ const wrapper = document.querySelector(".wrapper");
 
 const buttonDiv = document.querySelector(".btnDiv");
 
-const resultBox = document.querySelector(".resultBox")
+const resultBox = document.querySelector(".resultBox");
+
+const newGame = document.querySelector(".newGame");
 
 let cardOne, cardTwo;
 
@@ -23,7 +25,6 @@ let seconds = 0;
 
 window.onload = function () {
     shuffleCard();
-    helpButton.innerHTML=" Start";
 }
 function flipcard(e){
     let clickedCard = e.target;
@@ -76,6 +77,7 @@ function shuffleCard(){
     minutes = 0;
     seconds = 0;
     mistakes = 0;
+    startClock();
     cardOne = cardTwo = "";
     let arr = [4, 6, 2, 3, 8, 1, 7, 5, 4, 5, 2, 6, 8, 7, 3, 1];
     arr.sort(() => Math.random() > 0.5 ? 1 : -1);
@@ -101,12 +103,19 @@ function startClock() {
       seconds = 0;
       minutes++;
     }
-  }, 100);
+  }, 1000);
 }
 
+newGame.addEventListener("click", function(){
+    wrapper.classList.remove("hide");
+    buttonDiv.classList.remove("hide");
+    resultBox.classList.add("hide");
+    startButton.innerHTML="Start";
+})
 startButton.addEventListener("click", function(){
-    shuffleCard();
     startClock();
+    shuffleCard();
+    startButton.innerHTML="Next";
     cards.forEach(card => {
         card.classList.add("flip");
         setTimeout(() => {
@@ -118,7 +127,6 @@ startButton.addEventListener("click", function(){
 })
 
 helpButton.addEventListener("click", function(){
-    helpButton.innerHTML=" Help";
     cards.forEach(card => {
         card.classList.add("flip");
         setTimeout(() => {
