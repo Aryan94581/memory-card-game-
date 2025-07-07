@@ -78,7 +78,7 @@ startButton.addEventListener("click", function(){
         card.classList.add("flip");
         setTimeout(() => {
             card.classList.remove("flip");
-        }, 1000);
+        }, 2000);
         card.addEventListener("click", flipcard);
     });
     
