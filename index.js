@@ -22,6 +22,7 @@ let disableDeck = false;
 // time
 let minutes = 0;    
 let seconds = 0;
+let timer;
 
 
 window.onload = function () {
@@ -100,7 +101,8 @@ function resultPage(){
     resultBox.classList.remove("hide");
 }
 function startClock() {
-  setInterval(() => {
+  clearInterval(timer);
+  timer = setInterval(() => {
     seconds++;
     if (seconds === 60) {
       seconds = 0;
@@ -108,6 +110,7 @@ function startClock() {
     }
   }, 1000);
 }
+
 
 newGame.addEventListener("click", function(){
     wrapper.classList.remove("hide");
