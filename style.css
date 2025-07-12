@@ -11,7 +11,32 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #6563ff;
+    background-color: #ff8000;
+}
+.gradient {
+  font-weight: bold;
+  background: linear-gradient(
+    270deg,
+    #ff8000,  /* Saffron (starts here) */
+    #129407,
+    #3eaf34,
+    #f7f7f7,
+    #5cbcf8,
+    #ffffff,
+    #f39231    /* Loop back to saffron for seamless effect */
+  );
+  background-size: 800% 800%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 8s ease-in-out infinite;
+}
+
+@keyframes animate-gradient{
+    to{
+        background-position: 200%;
+    }
 }
 .wrapper{
     height: 400px;
@@ -72,7 +97,7 @@ body{
     }
 }
 .card .front-view span{
-    color: #6563ff;
+    color: #ff8000;
     font-size: 43px;
 }
 .card .back-view{
@@ -100,7 +125,7 @@ button{
     margin : 10px 20px;
     font-weight: 800;
     font-size: large;
-    color: #6563ff;
+    color: #ff8000;
     border: 0px;
 }
 
@@ -128,7 +153,7 @@ button{
 }
 .upperSection .headline{
     font-size: 2.5rem;
-    color: #4746ab;
+    color: #ff8000;
 }
 .resultBoxRow{
     width: 100%;
@@ -138,7 +163,7 @@ button{
     justify-content: space-between;
     flex-direction: row;
     padding: 2px 15px;
-    color: #4746ab;
+    color: #ff8000;
 
     background:#fff;
     border-radius: 7px;
@@ -146,11 +171,11 @@ button{
 
 }
 .time{
-    color: #6563ff;
+    color: #5cbcf8;
 
 }
 .mistakes{
-    color: #6563ff;
+    color: #5cbcf8;
      margin-right: 50px ;
 }
 .resultBox button{
@@ -161,14 +186,20 @@ button{
     font-weight: 800;
     font-size: 1.5rem;
     color: #fff;
-    background-color: #6563ff;
+    background-color: #ff8000;
     border: 0px;
     cursor: pointer;
     /* box-shadow: 0 3px 10px rgba(0,0,0,0.1); */
 }
+.newGame span{
+    color: #5cbcf8 ;
+}
 .hide{
     display: none;
 }
+
+
+
 
 @media (max-width: 600px) {
    body{
