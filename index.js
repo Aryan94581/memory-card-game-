@@ -1,12 +1,6 @@
 const cards = document.querySelectorAll(".card");
 
-const startButton = document.querySelector(".btn");
-
-const helpButton = document.querySelector(".btn2");
-
 const wrapper = document.querySelector(".wrapper");
-
-const buttonDiv = document.querySelector(".btnDiv");
 
 const resultBox = document.querySelector(".resultBox");
 
@@ -28,6 +22,7 @@ let timer;
 window.onload = function () {
     shuffleCard();
 }
+
 function flipCard(e){
     let clickedCard = e.target;
     if(clickedCard!== cardOne && !disableDeck){
@@ -97,9 +92,9 @@ function resultPage(){
     document.querySelector(".mistakes").innerHTML= mistakes;
     document.querySelector(".time").innerHTML = `${minutes}:${seconds}`;
     wrapper.classList.add("hide");
-    buttonDiv.classList.add("hide");
     resultBox.classList.remove("hide");
 }
+
 function startClock() {
   clearInterval(timer);
   timer = setInterval(() => {
@@ -114,35 +109,33 @@ function startClock() {
 
 newGame.addEventListener("click", function(){
     wrapper.classList.remove("hide");
-    buttonDiv.classList.remove("hide");
     resultBox.classList.add("hide");
-    startButton.innerHTML="Start";
     shuffleCard();
-})
-startButton.addEventListener("click", function(){
-    startClock();
-    shuffleCard();
-    playBackgroundMusic();
-    startButton.innerHTML="Next";
-    cards.forEach(card => {
-        card.classList.add("flip");
-        setTimeout(() => {
-            card.classList.remove("flip");
-        }, 2000);
-        card.addEventListener("click", flipCard);
-    });
-    
 })
 
-helpButton.addEventListener("click", function(){
-    cards.forEach(card => {
-        card.classList.add("flip");
-        setTimeout(() => {
-            card.classList.remove("flip");
-        }, 2000);
-        card.addEventListener("click", flipCard);
-    });
-})
+// startButton.addEventListener("click", function(){
+//     startClock();
+//     shuffleCard();
+//     playBackgroundMusic();
+//     startButton.innerHTML="Next";
+//     cards.forEach(card => {
+//         card.classList.add("flip");
+//         setTimeout(() => {
+//             card.classList.remove("flip");
+//         }, 2000);
+//         card.addEventListener("click", flipCard);
+//     });
+// })
+
+// helpButton.addEventListener("click", function(){
+//     cards.forEach(card => {
+//         card.classList.add("flip");
+//         setTimeout(() => {
+//             card.classList.remove("flip");
+//         }, 2000);
+//         card.addEventListener("click", flipCard);
+//     });
+// })
 
 
  // declare globally so it doesn't recreate each time
